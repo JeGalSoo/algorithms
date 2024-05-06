@@ -6,16 +6,11 @@ public class Main {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int c = sc.nextInt();
-        if(a+b+c == 180){
-            if(a==b&&a==c){
-                System.out.printf("Equilateral");
-            } else if (a==b||a==c||b==c) {
-                System.out.printf("Isosceles");
-            }else {
-                System.out.printf("Scalene");
-            }
-        }else {
-            System.out.println("Error");
+        int price = a*b;
+        if (c >= price) {
+            System.out.print(0);
+        } else {
+            System.out.print(price - c);
         }
     }
 }
