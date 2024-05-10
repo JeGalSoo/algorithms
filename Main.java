@@ -1,17 +1,17 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String a = sc.next();
-        String[] arr = a.split("");
-        int count = 0;
-        for (String s : arr) {
-            switch (s) {
-                case "a": case "e": case "i": case "o": case"u":
-                    count += 1;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (true){
+            String a = new StringBuilder(br.readLine()).reverse().toString();
+            if(a.equals("DNE")){
+                break;
+            }else {
+                System.out.println(a);
             }
         }
-        System.out.println(count);
     }
 }
