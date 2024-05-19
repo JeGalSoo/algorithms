@@ -3,14 +3,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double a = sc.nextInt();
-        double b = sc.nextInt();
-        double c = sc.nextInt();
-        int n = (int)(a * b / c);
-        int i = (int) (a / b * c);
-
-        int max = Math.max(n, i);
-
-        System.out.println(max);
+        int a = sc.nextInt();
+        if (a/1000==1) {
+            System.out.println(20);
+        }else if (a/100==1) {
+            System.out.println(10+(a%100));
+        }else {
+            System.out.println((a/10)+(a%10));
+        }
     }
 }
