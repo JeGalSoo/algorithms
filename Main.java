@@ -4,25 +4,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        switch (a%8){
-            case 1:
-                System.out.println(1);
-                break;
-            case 2:
-            case 0:
-                System.out.println(2);
-                break;
-            case 3:
-            case 7:
-                System.out.println(3);
-                break;
-            case 4:
-            case 6:
-                System.out.println(4);
-                break;
-            case 5:
-                System.out.println(5);
-                break;
+        for (int i=0; i<=a; i++) {
+            for (int j=i; j<a; j++) {
+                System.out.print(" ");
+            }
+            for(int k=0; k<i*2-1; k++) {
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 }
