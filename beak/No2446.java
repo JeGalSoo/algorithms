@@ -1,9 +1,9 @@
-import java.io.BufferedReader;
+package beak;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Main {
+public class No2446 {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();
