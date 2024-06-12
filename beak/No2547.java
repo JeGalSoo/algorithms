@@ -1,7 +1,9 @@
+package beak;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Main {
+public class No2547 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
