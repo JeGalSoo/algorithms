@@ -4,18 +4,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-
-        for (int i = 0; i < t; i++) {
-            int n = sc.nextInt();
-            BigInteger sum = new BigInteger("0");
-
-            for (int j = 0; j < n; j++) {
-                sum = sum.add(sc.nextBigInteger());
+        int a = sc.nextInt();
+        int b = 64;
+        int count = 0;
+        int temp = 0;
+        int result = a;
+        while (true) {
+            if (a == 64) {
+                count++;
+                break;
             }
-
-            String reminder = String.valueOf(sum.remainder(BigInteger.valueOf(n)));
-            System.out.println(reminder.equals("0")?"YES":"NO");
+            b /= 2;
+            if (b <= a) {
+                temp += b;
+                count++;
+                if (result == temp) {
+                    break;
+                }
+                a -= b;
+            }
         }
+        System.out.println(count);
     }
 }
