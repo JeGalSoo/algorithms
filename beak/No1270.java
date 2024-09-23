@@ -1,8 +1,10 @@
+package beak;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class Main {
+public class No1270 {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
