@@ -1,31 +1,62 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.StringTokenizer;
 
 public class Main {
+    static double rSum = 0;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        double sumNumxScore = 0;
+        double sumNum = 0;
 
-        int N = Integer.parseInt(br.readLine());
-        Integer arr[] = new Integer[N];
+        for(int i = 0; i < 20; i++){
+            st = new StringTokenizer(br.readLine());
+            String object = st.nextToken();
+            double num = Double.parseDouble(st.nextToken());
+            String alphabet = st.nextToken();
+            double score = 0;
 
-        for (int i = 0; i < N; i++) {
-            arr[i]=Integer.parseInt(br.readLine());
-        }
+            // P가 아닐 때만 체크
+            if(!(alphabet.equals("P"))){
+                // 과목 평점 계산
+                switch (alphabet) {
+                    case "A+":
+                        score = 4.5;
+                        break;
+                    case "A0":
+                        score = 4.0;
+                        break;
+                    case "B+":
+                        score = 3.5;
+                        break;
+                    case "B0":
+                        score = 3.0;
+                        break;
+                    case "C+":
+                        score = 2.5;
+                        break;
+                    case "C0":
+                        score = 2.0;
+                        break;
+                    case "D+":
+                        score = 1.5;
+                        break;
+                    case "D0":
+                        score = 1.0;
+                        break;
+                    case "F":
+                        score = 0.0;
+                        break;
+                    default:
+                        break;
+                }
 
-        int max = 0;
-        Arrays.sort(arr, Collections.reverseOrder());
-
-        for (int i = 0; i < N-2; i++) {
-            if(arr[i]<arr[i+1]+arr[i+2]) {
-                max = Math.max(max, arr[i]+arr[i+1]+arr[i+2]);
+                sumNumxScore += (num*score);
+                sumNum += num;
             }
         }
-        if(max==0) {
-            max=-1;
-        }
-        System.out.println(max);
+        System.out.printf("%.6f", sumNumxScore/sumNum);
     }
 }
