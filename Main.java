@@ -1,22 +1,31 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int count = 0;
-        String[][] arr = new String[5][15];
-        for(int i=0;i<5;i++) {
-            String str = sc.next();
-
-            if(str.length()>count)count = str.length();
-
-            for(int j=0;j<str.length();j++) {
-                arr[i][j] = String.valueOf(str.charAt(j));
+        while(true){
+            ArrayList list = new ArrayList();
+            int y = 0;
+            int a = sc.nextInt();
+            if(a == -1) break;
+            for (int i=1; i<a; i++){
+                if(a%i==0){
+                    list.add(i);
+                    y+=i;
+                }
             }
-        }
-        for(int i=0;i<count;i++) {
-            for(int j=0;j<5;j++) {
-                if(arr[j][i] != null)System.out.print(arr[j][i]);
+            if(y==a){
+                System.out.print(a + " = ");
+                for(int i=0; i<list.size(); i++){
+                    if(i==list.size()-1){
+                        System.out.println(list.get(i));
+                    }else{
+                        System.out.print(list.get(i) + " + ");
+                    }
+                }
+            }else {
+                System.out.println(a + " is NOT perfect.");
             }
         }
     }
